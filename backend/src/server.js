@@ -13,12 +13,12 @@ app.get("/books",(req,res)=>{
 
 if(ENV.NODE_ENV==="production"){
     app.use(express.static(path.join(__dirname,"../frontend/dist")));
-    app.get("/{*any}",(res,req)=>{
+    app.get("/{*any}",(req,res)=>{
         res.sendFile(path.join(__dirname,"../frontend","dist","index.html"));
     });
 }
 
 
-app.listen(ENV.PORT,()=> {
+app.listen(ENV.PORT || 10000,()=> {
 console.log(`server running on port ${ENV.PORT}`)});
 
