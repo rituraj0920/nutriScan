@@ -15,8 +15,8 @@ export default function LoginModal({ isOpen, onClose }) {
   // Handle traditional Email/Password login
   const handleEmailSubmit = (e) => {
     e.preventDefault();
-    if (email === "admin@test.com" && password === "password") {
-      login({ name: 'Alex', role: 'Admin', picture: null });
+    if (email === "rituraj@gmail.com" && password === "password") {
+      login({ name: 'Ritu', role: 'Admin', picture: null });
       onClose();
       navigate('/dashboard');
     } else {
