@@ -25,7 +25,7 @@ const EatHealthyLanding = ({onOpenLogin}) => {
                 Bridging the gap between plate and health. We are dedicated to solving global nutritional challenges through diversity and balance.
               </p>
               <Button variant="success" size="lg" className="me-2" onClick={onOpenLogin}>Login to dashboard</Button>
-              <Button variant="link" className="text-decoration-none text-success">Learn More →</Button>
+              <p variant="link" className="text-decoration-none text-white w-20 border p-2 m-3">Prototype email:"rituraj@gmail.com" passowrd:password</p>
             </Col>
             <Col lg={6} className="d-none d-lg-block">
               <img 
