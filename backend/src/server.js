@@ -1,17 +1,20 @@
-
 import express from "express";
+import helmet from "helmet";
 import path from "path";
 import { ENV } from "./lib/env.js";
-const app=express();
 
-const __dirname =path.resolve();
+const app = express();
+const __dirname = path.resolve();
 
-app.get("/books",(req,res)=>{
-    res.send("hello to dashboard");
 
-})
 
-if(ENV.NODE_ENV==="production"){
+
+  // Development mode fallback
+  app.get("/dashboard", (req, res) => {
+    res.send("Hello to dashboard! (Running in Development Mode)");
+  });
+
+  if(ENV.NODE_ENV==="production"){
     app.use(express.static(path.join(__dirname,"../frontend/dist")));
     app.get("/{*any}",(req,res)=>{
         res.sendFile(path.join(__dirname,"../frontend","dist","index.html"));
@@ -19,6 +22,7 @@ if(ENV.NODE_ENV==="production"){
 }
 
 
-app.listen(ENV.PORT,()=> {
-console.log(`server running on port ${ENV.PORT}`)});
+app.listen(ENV.PORT, () => {
+  console.log(`Server running on port ${ENV.PORT}`);
+});
 
