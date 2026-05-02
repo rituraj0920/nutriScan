@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Form, ProgressBar, Alert, Badge } from 'react-bootstrap';
 import ThemeToggleButton from './ThemeToggleButton';
 import { useTheme } from './nightmode';
+import axios from axios;
 
 
 const IngredientScanner = () => {
